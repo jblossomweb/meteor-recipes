@@ -39,7 +39,7 @@ accounts-password
 
 matb33:bootstrap-glyphicons
 zimme:active-route
-gwendall:auth-client-callbacks
+gwendall:auth-client-callbacks  # handles redirect after login
 
 meteortoys:allthings
 
