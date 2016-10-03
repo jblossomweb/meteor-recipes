@@ -1,16 +1,14 @@
 Template.RecipeDetails.onCreated(function(){
   var self = this;
-  console.log('RecipeDetails');
   self.autorun(function(){
-    self.subscribe('recipes');
+    self.subscribe('recipe', FlowRouter.getParam('id'));
   });
 });
 
 Template.RecipeDetails.helpers({
   recipe: function() {
-    var id = FlowRouter.getParam('id');
     return Recipes.findOne({
-      _id: id
+      _id: FlowRouter.getParam('id')
     });
   }
 });
