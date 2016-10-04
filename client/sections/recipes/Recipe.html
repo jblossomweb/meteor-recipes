@@ -2,7 +2,7 @@
   <article class="recipe {{#if inMenu}}in-menu{{/if}}">
     <h3>{{name}}</h3>
 
-    {{#if $.Session.get _id }}
+    {{#if editMode }}
       {{> quickForm collection="Recipes" id=recipeId type="update" doc=this autosave=true }}
     {{else}}
       <p>{{description}}</p>
