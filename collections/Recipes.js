@@ -1,8 +1,11 @@
 Recipes = new Mongo.Collection('recipes');
 
 Recipes.allow({
-  insert: function(userId, doc){
-    return !!userId; //exists
+  insert: function(userId){
+    return !!userId; // user exists
+  },
+  update: function(userId, doc){
+    return !!userId; // user exists
   }
 });
 
@@ -56,5 +59,18 @@ Recipes.attachSchema(new SimpleSchema({
     }
   }
 }));
+
+Meteor.methods({
+  toggleMenuItem: function(id, state) {
+    Recipes.update(id, {
+      $set: {
+        inMenu: !state
+      }
+    })
+  },
+  deleteRecipe: function(id) {
+    Recipes.remove(id);
+  }
+});
 
 export default Recipes;

@@ -314,6 +314,8 @@ input, select, textarea
     z-index 1
     shadow-level(1)
     trans()
+    .add-to-menu
+        display block
     .remove-from-menu
         display none
     &.in-menu
@@ -333,7 +335,7 @@ input, select, textarea
         margin-bottom 10px
     button
         margin-top 20px
-    .fa-trash
+    .fa-trash, .fa-pencil
         opacity 0.3
         cursor pointer
         position absolute
@@ -347,6 +349,10 @@ input, select, textarea
         &:hover
             color red
             opacity 0.6
+    .fa-pencil
+        right 30px
+        &:hover
+            color black
     .ingredient
         display inline-block
         margin-right 10px
